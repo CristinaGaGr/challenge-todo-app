@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from './App.module.scss';
 import { useDispatch } from 'react-redux';
 import { getToDoListRequest } from './store/todo/todo.actions';
 import { TodoList } from './components/todo-list/todo-list';
@@ -14,7 +15,7 @@ export const App = () => {
 	}, [dispatch]);
 
 	return (
-		<div>
+		<div className={styles.container}>
 			<TodoList/>
 			<button onClick={() => setShowCreateForm(true)}>Create a ToDo</button>
 			{showCreateForm && <CreateTodoForm setShowCreateForm={setShowCreateForm}/>}
